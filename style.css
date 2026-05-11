@@ -85,7 +85,7 @@ section p{
 /* Colores diferentes para cada sección */
 
 #inicio{
-    background-color: #2563eb;
+    background-image: url(imagenes/deportesfondo.jpg);
 }
 
 #servicios{
