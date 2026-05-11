@@ -81,7 +81,19 @@ section p{
     text-align: justify;
     padding: 10px;
 }
-
+/* div de imagenes tipo products*/
+.gallery{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.gallery img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+}
 /* Colores diferentes para cada sección */
 
 #inicio{
