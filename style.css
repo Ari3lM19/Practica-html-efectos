@@ -97,7 +97,12 @@ section p{
 /* Colores diferentes para cada sección */
 
 #inicio{
-    background-color: #2563eb;
+    margin: 0 auto;
+        padding: 20px;
+        background-image: url(imagenes/canachade\ fut.jpg);
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;;
 }
 
 #servicios{
