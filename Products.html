@@ -3,56 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Deportes S.A.</title>
-    <!-- Conexión con CSS -->
+    <title>Deportes S.A. - Galería</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Iconos -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <header>
-        <h1>Bienvenido a Deportes S.A.</h1>
         <nav>
-
-            <!-- Anchor Navigation -->
             <a href="Home.html">Inicio</a>
-
-            <a href="#basquetball">Servicios</a>
-
-            <a href="#futball">Galería</a>
-
-            <a href="#baseball">Contacto</a>
-
+            <a href="#basquetball">Basquetball</a>
+            <a href="#futball">Futball</a>
+            <a href="#baseball">Baseball</a>
         </nav>
     </header>
-    <section id="basquetball" style="background-image: url('media/fondos/city1.jpg'); background-size: cover;">
-        <h2>Basquetball</h2>
-        <p>Ofrecemos servicios de venta de artículos deportivos, asesoramiento técnico y mantenimiento de equipos.</p>
-        <div class="gallery">
-            <img src="media/productos/base_1.jpg" >
-            <img src="media/productos/base_2.jpg" > 
-            <img src="media/productos/base_3.jpg" >  
-        </div>
-    </section>
-    <section id="futball" style=" background-size: cover; ;background-image: url('media/fondos/city2.jpg');">
-        <h2>Futball</h2>
-        <p>Explora nuestra galería de productos deportivos de alta calidad.</p>
-        <div class="gallery">
-            <img src="media/productos/fut_1.jpg" >
-            <img src="media/productos/fut_2.jpg" >
-            <img src="media/productos/fut_3.jpg" >
-        </div>
-    </section>
-    <section id="baseball" style="background-image: url('media/fondos/city3.jpg'); background-size: cover;">
-        <h2>Baseball</h2>
-        <p>Contáctanos para más información sobre nuestros productos y servicios.</p>
-        <div class="gallery">
-            <img src="media/productos/base_1.jpg" >
-            <img src="media/productos/base_2.jpg" >
-            <img src="media/productos/base_3.jpg" >
-        </div>
-    </section>
+
+    <main>
+        <section id="basquetball" class="gallery-section" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('media/fondos/city1.jpg');">
+            <div class="section-content">
+                <h2>Basquetball</h2>
+                <p>Equipamiento profesional para la cancha. Domina el juego.</p>
+                
+                <div class="pro-gallery">
+                    <div class="gallery-item">
+                        <img src="media/productos/bask_1.jpg" alt="Producto 1">
+                        <div class="overlay"><h3>Balón Oficial</h3></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="media/productos/bask_2.jpg" alt="Producto 2">
+                        <div class="overlay"><h3>Accesorios</h3></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="media/productos/bask_3.jpg" alt="Producto 3">
+                        <div class="overlay"><h3>Calzado Pro</h3></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="futball" class="gallery-section" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('media/fondos/city2.jpg');">
+            <div class="section-content">
+                <h2>Futball</h2>
+                <p>Explora nuestra galería de productos para el deporte rey.</p>
+                
+                <div class="pro-gallery">
+                    <div class="gallery-item">
+                        <img src="media/productos/fut_3.jpg" alt="Fútbol 1">
+                        <div class="overlay"><h3>Tacos Élite</h3></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="media/productos/fut_1.jpg" alt="Fútbol 2">
+                        <div class="overlay"><h3>Balón Mundial</h3></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="media/productos/fut_2.jpg" alt="Fútbol 3">
+                        <div class="overlay"><h3>Guantes Portero</h3></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="baseball" class="gallery-section" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('media/fondos/city3.jpg');">
+            <div class="section-content">
+                <h2>Baseball</h2>
+                <p>Todo lo que necesitas para tu próximo home run.</p>
+                
+                <div class="pro-gallery">
+                    <div class="gallery-item">
+                        <img src="media/productos/base_1.jpg" alt="Béisbol 1">
+                        <div class="overlay"><h3>Equipo básico</h3></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="media/productos/base_2.jpg" alt="Béisbol 2">
+                        <div class="overlay"><h3>Bates</h3></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="media/productos/base_3.jpg" alt="Béisbol 3">
+                        <div class="overlay"><h3>pelotas</h3></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <footer>
         <p>&copy; 2024 Deportes S.A. Todos los derechos reservados.</p>
+        <button id="theme-btn" type="button" aria-label="Cambiar tema" title="Cambiar tema">
+            <i class="fa-solid fa-moon"></i>
+        </button>
     </footer>
+<!-- JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>

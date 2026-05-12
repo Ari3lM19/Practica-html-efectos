@@ -1,128 +1,336 @@
 /* Activa el Smooth Scroll */
-html{
-
+html {
     scroll-behavior: smooth;
 }
 
 /* Reset básico */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Diseño general */
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
 }
 
 /* Barra de navegación */
-nav{
-
+nav {
     position: fixed;
-
     top: 0;
-
     width: 100%;
-
-    background-color: #111827;
-
+    background-color: rgba(17, 24, 39, 0.95);
     padding: 20px;
-
     display: flex;
-
     justify-content: center;
-
     gap: 30px;
-
     z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-/* Links del menú */
-nav a{
-
+nav a {
     color: white;
-
     text-decoration: none;
-
     font-size: 18px;
-
+    font-weight: bold;
+    text-transform: uppercase;
     transition: 0.3s;
 }
 
-/* Hover de links */
-nav a:hover{
-
-    color: #60a5fa;
+nav a:hover {
+    color: #13643b;
 }
 
-/* Diseño de todas las secciones */
-section{
-
+/* Diseño general de secciones */
+section {
     min-height: 100vh;
-
     display: flex;
-
+    flex-direction: column;
     justify-content: center;
-
     align-items: center;
+    padding: 100px 20px 40px; /* padding-top para compensar el nav fijo */
+}
 
-    font-size: 50px;
+.section-content {
+    text-align: center;
+    max-width: 900px;
+    width: 100%;
+}
 
+section h2 {
+    font-size: 45px;
+    margin-bottom: 20px;
+    color: inherit;
+}
+
+section p {
+    font-size: 22px;
+    margin: 0 auto 40px auto;
+    line-height: 1.5;
+}
+
+
+/* Fondos para Index */
+#inicio {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('imagenes/canachade\ fut.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: white;
-    padding: 20px;
-}
-/* seccion de contacto, aislada para darle un diseño diferente */
-#contacto{
-    background-color: #ef4444;
-
-    display: block;
-
-    padding-top: 75px;
-
-    text-align: center;
 }
 
-/* Espacio para el texto de las secciones */
-section p{
+#servicios { background-color: #10b981; color: white; }
+#galeria-preview {
+    color: white;
+
+    background-image: url('media/fondos/patron.jpg');
+
+
+    background-repeat: repeat;
+
+    background-size: 500px auto; 
+}
+#contacto { background: linear-gradient(135deg, #1f1b69 20%, #ef4444 80%); 
+    color: white;}
+
+.btn-ver-mas {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: white;
+    color: #3c0819;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+.btn-ver-mas:hover {
+    background-color: #271115;
+    color: white;
+}
+/* =========================================
+   SECCIÓN SERVICIOS INTERACTIVA
+========================================= */
+/* Ajustamos el fondo para que las tarjetas blancas resalten */
+#servicios {
+    background: linear-gradient(50deg, #0be19a 10%, #0d2b48 90%);
+    color: white;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.service-card {
+    background-color: white;
+    color: #333;
+    padding: 40px 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    cursor: default;
+}
+
+/* Animación principal: Levantar la tarjeta y aumentar la sombra */
+.service-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+/* Efecto de línea naranja decorativa que aparece en el fondo al hacer hover */
+.service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 6px;
+    background-color: #0d8014; /* Naranja deportivo */
+    transition: width 0.4s ease;
+}
+
+.service-card:hover::after {
+    width: 100%;
+}
+
+/* Estilo y animación de los Emojis/Iconos */
+.service-icon {
+    font-size: 55px;
+    margin-bottom: 20px;
+    display: inline-block;
+    transition: transform 0.4s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.service-card h3 {
     font-size: 24px;
-    text-align: center;
-    max-width: 80%;
-    text-align: justify;
-    padding: 10px;
+    color: #111827;
+    margin-bottom: 15px;
 }
-/* div de imagenes tipo products*/
-.gallery{
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
+
+.service-card p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin: 0;
 }
-.gallery img{
-    width: 100px;
-    height: 100px;
+
+/* =========================================
+   GALERÍA PROFESIONAL (Products.html)
+========================================= */
+.gallery-section {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    
+}
+
+.pro-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border-radius: 10px;
-}
-/* Colores diferentes para cada sección */
-
-#inicio{
-    margin: 0 auto;
-        padding: 20px;
-        background-image: url(imagenes/canachade\ fut.jpg);
-        background-size: cover;
-        background-position: center center;
-        background-attachment: fixed;;
+    transition: transform 0.5s ease;
 }
 
-#servicios{
-    background-color: #10b981;
+.gallery-item:hover img {
+    transform: scale(1.15);
 }
 
-#galeria{
-    background-color: #f59e0b;
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+    color: white;
+    padding: 30px 15px 15px;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
 }
 
-#contacto{
-    background-color: #ef4444;
+.gallery-item:hover .overlay {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   TARJETAS DE CONTACTO (Index.html)
+========================================= */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.news-card {
+    background: #ecfff6;
+    border: 2px solid rgb(12, 6, 66);
+    border-radius: 14px;
+    padding: 25px 20px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    transition: 0.3s;
+}
+
+.news-card:hover {
+    transform: translateY(-10px);
+}
+
+.news-image img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%; /* Hace las fotos redondas */
+    border: 4px solid #096283;
+    margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+    background-color: #111827;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+}
+/* ===================================== */
+/* MODO OSCURO - ESTILOS */
+/* ===================================== */
+
+/* Fondo general y textos */
+body.dark {
+    background-color: #0f172a;
+    color: #e2e8f0;
+}
+
+/* Cambiar el color de los textos en las secciones */
+body.dark section p {
+    color: #cbd5e1;
+}
+
+/* Oscurecer las tarjetas de servicios y de contacto */
+body.dark .service-card,
+body.dark .news-card {
+    background-color: #1e293b;
+    border-color: #3b82f6; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5); 
+}
+
+/* Asegurar que los textos dentro de las tarjetas se lean bien en oscuro */
+body.dark .service-card h3,
+body.dark .news-card h3,
+body.dark .service-card p,
+body.dark .news-card p {
+    color: #f8f9fa;
+}
+
+/* ===================================== */
+/* BOTÓN DE TEMA EN EL FOOTER */
+/* ===================================== */
+#theme-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#theme-btn:hover {
+    transform: scale(1.2) rotate(15deg);
+    color: #0be19a;
 }
