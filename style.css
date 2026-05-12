@@ -59,7 +59,7 @@ nav a:hover{
 /* Diseño de todas las secciones */
 section{
 
-    height: 100vh;
+    min-height: 100vh;
 
     display: flex;
 
@@ -71,6 +71,16 @@ section{
 
     color: white;
     padding: 20px;
+}
+/* seccion de contacto, aislada para darle un diseño diferente */
+#contacto{
+    background-color: #ef4444;
+
+    display: block;
+
+    padding-top: 75px;
+
+    text-align: center;
 }
 
 /* Espacio para el texto de las secciones */
